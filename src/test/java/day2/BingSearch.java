@@ -26,7 +26,7 @@ public class BingSearch {
 
     }
 
-    @Test
+    @Test //Bing Search
     public void testSearch() {
         String queryString = "Portnov School";
 
@@ -37,7 +37,7 @@ public class BingSearch {
 
     }
 
-    @Test
+    @Test //Bing Search
     public void testSearch02() {
         String queryString = "Portnov Computer School";
 
