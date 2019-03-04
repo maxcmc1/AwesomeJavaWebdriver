@@ -39,7 +39,6 @@ public class YahooSearch {
 
         WebElement resultsSpanElement = driver.findElement(By.id("results")).findElement(By.className("compPagination")).findElement(By.tagName("span"));
 
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         Assert.assertTrue(resultsSpanElement.isDisplayed());
 
