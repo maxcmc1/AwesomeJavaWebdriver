@@ -77,7 +77,7 @@ public class GoogleSearch {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("resultStats")));
     }
 
-    public void sleepThread () {
+    public static void sleepThread () {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
