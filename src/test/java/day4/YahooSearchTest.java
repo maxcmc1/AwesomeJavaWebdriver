@@ -1,9 +1,12 @@
 package day4;
 
+import day2.Tools;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -39,9 +42,20 @@ public class YahooSearchTest {
 
         WebElement resultsSpanElement = driver.findElement(By.id("results")).findElement(By.className("compPagination")).findElement(By.tagName("span"));
 
+        String xpathValue = "";
+        String cssValue = "div.compPagination span";
+        By resultsElement = By.xpath(xpathValue);
 
+
+        explicitWait (driver, By.cssSelector(cssValue));
         Assert.assertTrue(resultsSpanElement.isDisplayed());
 
+
+    }
+
+    private void explicitWait(WebDriver driver, By element) {
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
 
     }
 
@@ -56,6 +70,7 @@ public class YahooSearchTest {
     private void openMainPage() {
 
         driver.get("https://www.yahoo.com/");
+        Tools.waitForPageLoaded(driver);
 
     }
 
