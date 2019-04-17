@@ -45,9 +45,9 @@ public class YahooSearchXPath {
     }
 
     private void assertResults() {
-        WebElement resultStatsElement = driver.findElement(By.xpath("//*[contains(@id,'yui')]")); //  //*[contains(@name,'rest')]
+        WebElement resultStatsElement = driver.findElement(By.xpath("//*[@class='compPagination']/span")); //  //*[contains(@name,'rest')]
         System.out.println(resultStatsElement.isDisplayed());
-        //String textFromResults = resultStatsElement.getText();
+        String textFromResults = resultStatsElement.getText();
         //String xpathValue = "//*[contains(@id,'yui')]";
         //explicitWait(driver, By.xpath(xpathValue));
         //Assert.assertTrue(textFromResults.endsWith("results"));
